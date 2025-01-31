@@ -11,7 +11,7 @@ export const typeDefs = `#graphql
 
     type Query {
         getRestaurant(id: ID!): Restaurante!
-        getRestaurants(city: String!) [Restaurante!]!
+        getRestaurants(city: String!): [Restaurante!]!
     }
 
     type Mutation {
