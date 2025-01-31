@@ -8,7 +8,7 @@ import { GraphQLError } from "graphql";
 
 const MONGO_URL = Deno.env.get("MONGO_URL")
 if(!MONGO_URL){
-  console.error("Error MONGO_URL");
+  throw new GraphQLError("ERROR MONGO_URL")
 }
 
 const client = new MongoClient(MONGO_URL)
