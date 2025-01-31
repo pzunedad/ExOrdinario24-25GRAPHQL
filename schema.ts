@@ -6,7 +6,7 @@ export const typeDefs = `#graphql
         adress: String!
         phone: String!
         temperature: String!
-        time: String!
+        hora: String!
     }
 
     type Query {
