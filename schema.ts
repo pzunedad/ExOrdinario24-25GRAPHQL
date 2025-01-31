@@ -10,12 +10,12 @@ export const typeDefs = `#graphql
     }
 
     type Query {
-        getRestaurant(id: ID!): Restaurante!
-        getRestaurants(city: String!): [Restaurante!]!
+        getRestaurant(id: ID!): Restaurant!
+        getRestaurants(city: String!): [Restaurant!]!
     }
 
     type Mutation {
-        addRestaurant(name: String!, adress:String!, city: String!, phone: String!): Restaurante!
+        addRestaurant(name: String!, adress:String!, city: String!, phone: String!): Restaurant!
         deleteRestaurant(id: ID!): Boolean
     }
 
