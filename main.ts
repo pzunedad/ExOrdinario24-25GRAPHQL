@@ -7,7 +7,10 @@ import { RestaurantModel } from "./types.ts";
 import { GraphQLError } from "graphql";
 
 const MONGO_URL = Deno.env.get("MONGO_URL")
-if(!MONGO_URL) throw new GraphQLError("Error con MONGO_URL")
+if(!MONGO_URL){
+  console.error("Error MONGO_URL");
+  Deno.exit(1);
+}
 
 const client = new MongoClient(MONGO_URL)
 await client.connect()
