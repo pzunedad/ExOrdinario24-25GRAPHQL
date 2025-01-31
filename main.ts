@@ -4,9 +4,10 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs } from "./schema.ts";
 import { resolvers } from "./resolvers.ts";
 import { RestaurantModel } from "./types.ts";
+import { GraphQLError } from "graphql";
 
 const MONGO_URL = Deno.env.get("MONGO_URL")
-if(!MONGO_URL) throw new Error("Error con MONGO_URL")
+if(!MONGO_URL) throw new GraphQLError("Error con MONGO_URL")
 
 const client = new MongoClient(MONGO_URL)
 await client.connect()
